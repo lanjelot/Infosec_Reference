@@ -3,65 +3,59 @@
 ## Table of Contents
 - [General](#general)
 - [Secure Development Patterns/Practices/Resources](#securedev)
-	- [Application Logging & Monitoring](#logmon)
-	- [Appsec Stuff](#appsec) 
-	- [Code Repo](#crepo)
-	- [Code Review](#code-review)
-	- [Secrets Management](#secrets)
-	- [Secure Software Development Lifecycle](#sdlc) 
-	- [Software Testing](#stest)
-	- [Supply Chain Management](#supply)
-	- [Threat Modeling](#threatm)
-	- [Avoiding Specific Vulnerability Classes](#specvuln)
-		- [Comparison Operations](#compops)
-		- [Cryptographic Issues](#crypto)
-		- [Input Validation](#inputval)
-		- [Race Conditions/ToCToU Bugs](#toctou)
-		- [Account Enumeration](#ace)
-		- [Secure File Upload](#sfu)
-		- [SQL Injection](#sqli)
-- [Code Repositories](#code-repo)
+    - [Application Logging & Monitoring](#logmon)
+    - [AppSec Stuff](#appsec)
+    - [Code-Repo Related](#crepo)
+    - [Code Review](#code-review)
+    - [Secure/Software/Systems Development Life Cycle(SDLC/SDL)](#sdlc)
+    - [Software Testing](#stest)
+    - [Supply-Chain Management](#supply)
+    - [Threat Modeling](#threatm)
+    - [Specific Vulnerabilitiy Mitigation/Prevention](#specvuln)
+      - [Comparison Operations](#compops)
+      - [Cryptographic Issues](#crypto)
+      - [Input Validation](#inputval)
+      - [Race Conditions/ToCToU Bugs](#toctou)
+      - [Account Enumeration](#ace)
+      - [Secure File Upload](#sfu)
+      - [SQL Injection](#sqli)
 - [Source Code Analysis](#sca)
-	- [Language Agnostic](#nonspec)
-	- [Language Specific](#spec)
-	- [Infrastructure-as-Code Scanners & Linters](#iaac)
-	- [Application Security Pipeline Scanning](#appsecpipeline)
-	- [Continous Integration](#ci)
-	- [Continous Deployment](#cd)
-	- [CI/CD Scanning Tooling/Approaches](#cdscan)
-	- [(DIY) Building an AppSec Pipeline](#cddiy)
-	- [Static Analysis Approaches & Tooling](#static)
-	- [Dynamic Analysis - Continuous Scanning](#dynscan)
-	- [Dependency Management](#depmgmt)
-	- [Metrics](#met)
-	- [Automated Response](#auto)
-- [APIs](#api)
-- [ASM](#asm)
-- [Android](#android)
-- [Bash](#bash)
-- [C/C++](#c)
-- [CSharp](#csharp)
-- [Go](#go)
-- [Java](#java)
-- [Javascript](#javascript)
-- [Lisp](#lisp)
-- [Lua](#lua)
-- [Perl](#perl)
-- [Powershell](#power)
-- [Python](#python)
-- [Ruby](#ruby)
-- [PHP](#php)
-- [PowerShell](#powershell)
-- [Python](#python)
-- [Ruby](#ruby)
-- [Rust](#rust)
-- [SQL](#sql)
-- [Swift](#swift)
-- [UEFI](#uefi)
+    - [Non-Specific](#nonspec)
+    - [Specific Languages](#spec)
+    - [Infrastructure-as-Code Scanners & Linters](#iaac)
+- [Application Security Pipeline](#appsecpipeline)
+    - [Continous Integration](#ci)
+    - [Continous Deployment](#cd)
+    - [CI/CD Scanning Tooling/Approaches](#cdscan)
+    - [(DIY) Building an AppSec Pipeline](#cddiy)
+    - [Static Analysis Approaches & Tooling](#static)
+    - [Dynamic Analysis - Continuous Scanning](#dynscan)
+    - [Dependency Management](#depmgmt)
+    - [Metrics](#metrics)
+    - [Automated Response](#auto)
+- [Languages](#languages)
+  - [APIs](#apis)
+  - [Assembly x86/x64/ARM](#asm)
+  - [Android (Kotlin/Android Java)](#android)
+  - [Bash](#bash)
+  - [C/C++](#c)
+  - [C#](#c#)
+  - [Go](#go)
+  - [Java](#java)
+  - [Javascript](#javascript)
+  - [Lisp](#lisp)
+  - [Lua](#lua)
+  - [Perl](#perl)
+  - [Powershell](#power)
+  - [PHP](#php)
+  - [Python](#python)
+  - [Ruby](#ruby)
+  - [Rust](#rust)
+  - [SQL](#sql)
+  - [Swift](#swift)
+  - [UEFI Programming](#uefi)
 
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-### General<a name="general"></a>
+## General <a name="general"></a>
 * The content here is just stuff I've come across or think would be useful to someone in infosec. It is not to be taken as anything beyond a suggestion about stuff.
 * **Articles/Blogposts/Writeups**
 	* [How To Write Unmaintainable Code - Roedy Green](https://github.com/Droogans/unmaintainable-code)
@@ -92,10 +86,7 @@
 	* [A bug goes skateboarding on Boehm’s Curve - Ulf Eriksson(2013)](https://reqtest.com/general/a-bug-goes-skateboarding-on-boehms-curve/)
 
 
-
-
------------
-### Secure Development Patterns/Practices/Resources<a name="securedev"></a> 
+## Secure Development Patterns/Practices/Resources <a name="securedev"></a> 
 * **General**
 	* **Articles/Papers/Talks/Writeups**
 		* [Counterfeit Object-oriented Programming](http://syssec.rub.de/media/emma/veroeffentlichungen/2015/03/28/COOP-Oakland15.pdf)
@@ -105,8 +96,8 @@
 		* [Who Fixes That Bug? - Part One: Them! - Ryan McGeehan](https://medium.com/starting-up-security/who-fixes-that-bug-d44f9a7939f2)
 			* [Part 2](https://medium.com/starting-up-security/who-fixes-that-bug-f17d48443e21)
 	* **Talks/Presentations/Videos**
-* **Application Logging & Monitoring**<a name="logmon"></a>
-* **AppSec Stuff**<a name="appsec"></a>
+* **Application Logging & Monitoring** <a name="logmon"></a>
+* **AppSec Stuff** <a name="appsec"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Application Security in a DevOps Environment - Lyft](https://eng.lyft.com/application-security-in-a-devops-environment-53092f8a6048)
 		* [Designing Security for Billions - Facebook](https://newsroom.fb.com/news/2019/01/designing-security-for-billions/)
@@ -123,7 +114,7 @@
 			* The vast majority of security breaches encountered today are a direct result of insecure code. Consequently, the protection of computer systems critically depends on the rigorous identification of vulnerabilities in software, a tedious and errorprone process requiring significant expertise. Unfortunately, a single flaw suffices to undermine the security of a system and thus the sheer amount of code to audit plays into the attacker’s cards. In this paper, we present a method to effectively mine large amounts of source code for vulnerabilities. To this end, we introduce a novel representation of source code called a code property graph that merges concepts of classic program analysis, namely abstract syntax trees, control flow graphs and program dependence graphs, into a joint data structure. This comprehensive representation enables us to elegantly model templates for common vulnerabilities with graph traversals that, for instance, can identify buffer overflows, integer overflows, format string vulnerabilities, or memory disclosures. We implement our approach using a popular graph database and demonstrate its efficacy by identifying 18 previously unknown vulnerabilities in the source code of the Linux kernel.
 		* [Pushing Left Like A Boss - Tanya Janca](https://www.youtube.com/watch?v=Q5Nt8VhXg-0)
 			* With incident response and penetration testing currently receiving most of our application security dollars, it would appear that industry has decided to treat the symptom instead of the disease. 'Pushing left' refers to starting security earlier in the SDLC; addressing the problem throughout the process, and specifically during the development phase. From scanning your code with a vulnerability scanner to red team exercises, developer education programs and bug bounties, this talk will show you how to 'push left', like a boss. This talk is aimed at developers, operations, dev-ops, people who are new to application security, managers, or anyone who works in any other field of security than AppSec.
-* **Code-Repo Related**<a name="crepo"></a>
+* **Code-Repo Related** <a name="crepo"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Why Google Stores Billions of Lines of Code in a Single Repository - Rachel Potvin, Josh Levenberg(2016)](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext)
 	* **Repo Software**
@@ -135,7 +126,7 @@
 			* See also: Gitea, Gogs, Gitolite, Gitlab
 	* **Code Search**
 		* [Sourcegraph](https://about.sourcegraph.com/)
-* **Code Review**<a name="code-review"></a>
+* **Code Review** <a name="code-review"></a>
 	* **101**
 		* [Code Reviews: Just Do It - Jeff Atwood](https://blog.codinghorror.com/code-reviews-just-do-it/)
 		* [On Code Reviews - Nick Shrock(2018)](https://medium.com/@schrockn/on-code-reviews-b1c7c94d868c)
@@ -245,7 +236,7 @@
 		* This guide is a collection of the most common vulnerabilities found in iOS applications. The focus is on vulnerabilities in the applications’ code and only marginally covers general iOS system security, Darwin security, C/ObjC/C++ memory safety, or high-level application security. Nevertheless, hopefully the guide can serve as training material to iOS app developers that want to make sure that they ship a more secure app. Also, iOS security reviewers can use it as a reference during assessments.
 	* [OWASP Secure Coding Practices-Quick Reference Guide](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content)
 		* The Secure Coding Practices Quick Reference Guide is a technology agnostic set of general software security coding practices, in a comprehensive checklist format, that can be integrated into the development lifecycle. At only 17 pages long, it is easy to read and digest. The focus is on secure coding requirements, rather then on vulnerabilities and exploits. It includes an introduction to Software Security Principles and a glossary of key terms. It is designed to serve as a secure coding kick-start tool and easy reference, to help development teams quickly understand secure coding practices.
-* **Secure/Software/Systems Development Life Cycle(SDLC/SDL)**<a name="sdlc"></a>
+* **Secure/Software/Systems Development Life Cycle(SDLC/SDL)** <a name="sdlc"></a>
 	* **101**
 		* [Systems development life cycle - Wikipedia](https://en.wikipedia.org/wiki/Systems_development_life_cycle)
 		* [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl)
@@ -263,7 +254,7 @@
 			* In this presentation we will discuss both our Secure Development Lifecycle (SDL) process and tooling, as well as view metrics and provide analysis of how the process has worked thus far. We intend to open-source our tooling as a supplement to this presentation, and offer advice for others wishing to attempt similar implementations. We'll discuss our deployment of a flexible framework for security reviews, including a lightweight self-service assessment tool, a checklist generator, and most importantly a chat-based process that meets people where they are already working. We’ll show how it’s possible to encourage a security mindset among developers, while avoiding an adversarial relationship. By tracking data from multiple sources, we can also view the quantified success of such an approach and show how it can be applied in other organizations.
 		* [Practical tips for defending web applications - Zane Lackey - devops Amsterdam 2017](https://www.youtube.com/watch?v=Mae2iXUA7a4)
 			* [Slides](https://www.blackhat.com/docs/us-17/thursday/us-17-Lackey-Practical%20Tips-for-Defending-Web-Applications-in-the-Age-of-DevOps.pdf)
-* **Software Testing**<a name="stest"></a>
+* **Software Testing** <a name="stest"></a>
 	* **Articles/Blogposts/Writeups**
 		* [A kernel unit-testing framework - Jonathan Corbet](https://lwn.net/Articles/780985/)
 		* [How is the Linux kernel tested? - StackOverflow](https://stackoverflow.com/questions/3177338/how-is-the-linux-kernel-tested)
@@ -275,7 +266,7 @@
 			* There are many ways you can test your software: unit testing, manual testing, end-to-end testing, and so forth. Take a step back and you'll discover even more form of testing, many of them very different in their goals: A/B testing, say, where you see which of two versions of your website results in more signups or ad clicks. How do these forms of testing differ, how do they relate to each other? How do you choose which kind of testing to pursue, given limited time and resources? How do you deal with strongly held yet opposite views arguing either that a particular kind of testing is essential or that it's a waste time? This talk will provide you with a model, a way to organize all forms of testing and understand what exactly they provide, and why. Once you understand the model you will be able to choose the right form of testing for *your* situation and goals.
 		* [Robots with Pentest Recipes - Abhay Bhargav(OWASP AppSec Cali 2018)](https://www.youtube.com/watch?v=EC1X4bqAqCk)
 			* Over the last few months, my team and I have leveraged the all-powerful Robot Framework to integrate various security testing tools, including OWASP ZAP, Nmap, Nessus. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). It provides a very extensible test-driven syntax that extend test libraries implemented in Python or Java. We have developed Open Source libraries for popular tools like OWASP ZAP, Nmap, Nessus and some recon tools, which can be invoked with existing libraries like Selenium, etc to perform completely automated, parameterized, security tests across the continuous delivery pipeline with easy-to-write, almost trivial test syntax like `run nmap scan` OR `start zap active scan` thereby making it easier for engineering teams to be able to create “recipes” of security tests that they want to run, integrate with functional test automation to run anything from a baseline scan to a complete parameterized security test of the application on various environments. In fact, we have used these libraries to run a “mostly automated pentest as a recipe” replete with recon, mapping, vulnerability discovery phases with evidences and reporting built-in.
-* **Supply-Chain Management**<a name="supply"></a>
+* **Supply-Chain Management** <a name="supply"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Want to take over the Java ecosystem? All you need is a MITM! - Jonathan Leitschuh(2019)](https://medium.com/bugbountywriteup/want-to-take-over-the-java-ecosystem-all-you-need-is-a-mitm-1fc329d898fb)
 		* [How To Take Over The Computer Of any Java (or Clojure or Scala) Developer - max.computer(2014)](https://max.computer/blog/how-to-take-over-the-computer-of-any-java-or-clojure-or-scala-developer/)
@@ -291,7 +282,7 @@
 			* LibScout is a light-weight and effective static analysis tool to detect third-party libraries in Android/Java apps. The detection is resilient against common bytecode obfuscation techniques such as identifier renaming or code-based obfuscations such as reflection-based API hiding or control-flow randomization. Further, LibScout is capable of pinpointing exact library versions including versions that contain severe bugs or security issues.
 		* [third-party-lib-analyzer](https://github.com/jtmelton/third-party-lib-analyzer)
 			* A tool for analyzing third party libraries and how they connect to user classes. TPLA constructs a graph database of all dependencies, user classes, and relationships between all classes. It also allows some built in queries to be executed with reports generated based on the results.
-* **Threat Modeling**<a name="threatm"></a>
+* **Threat Modeling** <a name="threatm"></a>
 	* See [Threat Modeling](./threatmodel.md)
 	* **Articles/Blogposts/Writeups**
 		* [Abuser Stories: A Sneak Peak For Scrum Teams - Abhay Bhargav(2018)](https://www.we45.com/blog/abuser-stories-a-sneak-peak-for-scrum-teams)
@@ -329,28 +320,28 @@
 			* goSDL is a web application tool that serves as a self-service entry point for following a Security Development Lifecycle checklist in a software development project. This tool collects relevant information about the feature, determines the risk rating, and generates the appropriate security requirements. The tool tailors the checklist to the developers’ specific needs, without providing unnecessary unrelated security requirements. Security experts can establish custom security guidance and requirements as checklist items for all developers. This checklist is used as a guide and reference for building secure software. This encourages a security mindset among developers when working on a project and can be used to easily track the completion of security goals for that project.
 		* [Mozilla Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment)
 			* A typical Rapid Risk Analysis/Assessment (RRA) takes about 30 minutes. It is not a security review, a full threat-model, a vulnerability assessment, or an audit. These types of activities may however follow an RRA if deemed appropriate or necessary. The main objective of the RRA is to understand the value and impact of a service to the reputation, finances, productivity of the project or business. It is based on the data processed, stored or simply accessible by services. Note that the RRA does not focus on enumerating and analyzing security controls. The RRA process is intended for analyzing and assessing services, not processes or individual controls.
-* **Specific Vulnerabilitiy Mitigation/Prevention**<a name="specvuln"></a>
-	* **Comparison Operations**<a name="compops"></a>
+* **Specific Vulnerabilitiy Mitigation/Prevention** <a name="specvuln"></a>
+	* **Comparison Operations** <a name="compops"></a>
 		* **Articles/Blogposts/Writeups**
 			* [The Evil within the Comparison Functions - Andrey Karpov](https://www.viva64.com/en/b/0509/)
 			* [Inverting Your Assumptions: A Guide To JIT Comparisons - Jasiel Spelman(2018)](https://www.zerodayinitiative.com/blog/2018/4/12/inverting-your-assumptions-a-guide-to-jit-comparisons)
-	* **Cryptographic Issues**<a name="crypto"></a>
+	* **Cryptographic Issues** <a name="crypto"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Top 10 Developer Crypto Mistakes - crazycontini(2017)](https://littlemaninmyhead.wordpress.com/2017/04/22/top-10-developer-crypto-mistakes)
-	* **Input Validation**<a name="inputval"></a>
+	* **Input Validation** <a name="inputval"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Validating input - David Wheeler(2003)](https://www.ibm.com/developerworks/library/l-sp2/index.html)
-	* **Race Conditions/ToCToU Bugs**<a name="toctou"></a>
+	* **Race Conditions/ToCToU Bugs** <a name="toctou"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Exploiting and Protecting Against Race Conditions - Jack Cable(2017)](https://lightningsecurity.io/blog/race-conditions/)
-	* **Account Enumeration**<a name="ace"></a>
+	* **Account Enumeration** <a name="ace"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Once upon a time an account enumeration - Cust0n](https://sidechannel.tempestsi.com/once-upon-a-time-there-was-an-account-enumeration-4cf8ca7cdc1)
 			* "The aim of this blogpost is to illustrate how account enumeration can occur in web applications, from the classic example to some tricks we’ve learned over the years (and of course show how to avoid this)."
-	* **Secure File Upload**<a name="sfu"></a>
+	* **Secure File Upload** <a name="sfu"></a>
 		* **Articles/Blogposts/Writeups**
 			* [8 Basic Rules to Implement Secure File Uploads - SANS](https://software-security.sans.org/blog/2009/12/28/8-basic-rules-to-implement-secure-file-uploads/)
-	* **SQL Injection**<a name="sqli"></a>
+	* **SQL Injection** <a name="sqli"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Bobby Tables: A guide to preventing SQL injection](https://bobby-tables.com/)
 			* [SQL Injection Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
@@ -365,11 +356,7 @@
 	6. How did that ever work?
 	```
 
-
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------
-### Source Code Analysis<a name="sca"></a>
+## Source Code Analysis <a name="sca"></a>
 * **Articles/Blogposts/Writeups**
 	* [What I learned from doing 1000 code reviews](https://hackernoon.com/what-i-learned-from-doing-1000-code-reviews-fe28d4d11c71)
 	* [One Line of Code that Compromises Your Server - The dangers of a simplistic session secret](https://martinfowler.com/articles/session-secret.html)
@@ -384,7 +371,7 @@
 	* [Code Insecurity or Code in Security - Mano 'dash4rk' Paul](http://www.irongeek.com/i.php?page=videos/derbycon4/t205-code-insecurity-or-code-in-security-mano-dash4rk-paul)
 		* Attendees of this talk will benefit from learning about what constitutes insecure code and the associated attacks that stem from such code. Applicable attacks ranging from injection to reversing will be demonstrated to reinforce contents of this talk. This way, the attendee would not only be taught about “What not to do?” but also, “Why this should not do, what they ought not to do?”. Finally, attendees will also be introduced to secure development processes such as protection needs elicitation, threat modeling, code review and analysis and secure deployment, to illustrate that while writing secure code is one important aspect of software security, there is more to securing applications, than what meets the eye. Come for a fun filled, interactive session and your chance to win one of the personalized and autographed copies of the speaker’s renowned book – The 7 qualities of highly secure software.
 	* [Seth & Ken’s Excellent Adventures in Secure Code Review - thesecuredeveloper.com](https://www.thesecuredeveloper.com/post/seth-ken-s-excellent-adventures-in-secure-code-review)
-* **Non-Specific**<a name="nonspec"></a>
+* **Non-Specific** <a name="nonspec"></a>
 	* **Tools**
 		* **Analyzer**
 			* [Semgrep](https://github.com/returntocorp/semgrep)
@@ -415,7 +402,7 @@
 		* [ripgrep](https://github.com/burntsushi/ripgrep)
 			* ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern. By default, ripgrep will respect your .gitignore and automatically skip hidden files/directories and binary files. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
 			* [ripgrep is faster than {grep, ag, git grep, ucg, pt, sift} - Andrew Gallant(2016)](https://blog.burntsushi.net/ripgrep/)
-* **Specific Languages**<a name="spec"></a>
+* **Specific Languages** <a name="spec"></a>
 	* **`*`sh**
 		* **Bash**
 			* [Shellcheck](https://github.com/koalaman/shellcheck)
@@ -553,7 +540,7 @@
 		* **Tooling**
 			* [cargo-audit](https://github.com/RustSec/cargo-audit)
 				* Audit Cargo.lock files for crates with security vulnerabilities
-* **Infrastructure-as-Code Scanners & Linters**<a name="iaac"></a>
+* **Infrastructure-as-Code Scanners & Linters** <a name="iaac"></a>
 	* **Non-Specific**
 		* [conftest](https://github.com/open-policy-agent/conftest)
 			* Conftest helps you write tests against structured configuration data. Using Conftest you can write tests for your Kubernetes configuration, Tekton pipeline definitions, Terraform code, Serverless configs or any other config files.
@@ -576,18 +563,7 @@
 		* [Terrafirma](https://github.com/wayfair/terrafirma)
 			* Terrafirma is a Terraform static analysis tool designed for detecting security misconfigurations. Inspired by projects such as bandit and SecurityMonkey it is designed for use in a continous integration/deployment environment.
 
-
-
-
-
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------
-### Application Security Pipeline<a name="appsecpipeline"></a>
+## Application Security Pipeline <a name="appsecpipeline"></a>
 * **General**
 	* **Articles/Blogposts/Writeups**
 		* [Scale your security with DevSecOps: 4 valuable mindsets and principles - Clint Gibler](https://techbeacon.com/devops/how-scale-security-devsecops-4-valuable-mindsets-principles)
@@ -600,7 +576,7 @@
 		* [DevSecOps : What, Why and How - Anant Shrivastava(BHUSA 2019)](https://www.youtube.com/watch?v=DzX9Vi_UQ8o)
 			* [Slides](https://i.blackhat.com/USA-19/Thursday/us-19-Shrivastava-DevSecOps-What-Why-And-How.pdf)
 			* In this talk, we shall focus on how a DevOps pipeline can easily be metamorphosed into a DevSecOps and the benefits which can be achieved with this transformation. The talk (assisted with various demos) will focus on developing a DevSecOps pipeline using free/open-source tools in various deployment platforms, i.e. on-premise, cloud native and hybrid scenarios.
-* **Continous Integration**<a name="ci"></a>
+* **Continous Integration** <a name="ci"></a>
 	* **Alerting**
 	* **Git-related**
 		* [githooks](https://githooks.com/)
@@ -627,7 +603,7 @@
 				* Test Kitchen is an integration tool for developing and testing infrastructure code and software on isolated target platforms.
 			* [inspec-iggy](https://github.com/mattray/inspec-iggy)
 				* InSpec-Iggy (InSpec Generate -> "IG" -> "Iggy") is an InSpec plugin for generating compliance controls and profiles from Terraform tfstate files and AWS CloudFormation templates. Iggy generates InSpec controls by mapping Terraform and CloudFormation resources to InSpec resources and exports a profile that may be used from the inspec CLI and report to Chef Automate.
-* **Continous Deployment**<a name="cd"></a>
+* **Continous Deployment** <a name="cd"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Security-focused CI/CD Pipeline - alxk(2018)](https://alex.kaskaso.li/post/effective-security-pipeline)
 			* In this post we’ll walk through the main components of a DevSecOps Continuous Integration pipeline. This will allow us to catch security issues both during development and on a continuous basis in production.
@@ -640,7 +616,7 @@
 		* [Time-Based Release Management in Free and Open Source (FOSS) Projects - Martin Michlmayr, Brian Fitzgerald(2012)](http://www.cyrius.com/publications/michlmayr_fitzgerald-time_based_release_management.pdf)
 			* As the Free and Open Source (FOSS) concept has matured, its commercial significance has also increased, and issues such as quality and sustainability have moved to the fore. In this study, the authors focus on timebased release management in large volunteerFOSS projects, and reveal howthey address quality and sustainability issues. They discuss the differences between release management in the traditional software context and contrast it with FOSS settings. Based on detailed case studies of a number of prominent FOSS projects, they describe the move to time-based release management and identify the factors and criteria necessary for a successful transition. The authors also consider the implications for software development more generally in the current dynamic Internet-enabled environment.
 	* **Tooling**
-* **CI/CD Scanning Tooling/Approaches**<a name="cdscan"></a>
+* **CI/CD Scanning Tooling/Approaches** <a name="cdscan"></a>
 	* **Homegrown Implementing Scanner Tooling**
 		* **Talks/Presentations/Videos**
 			* [Scaling Security Assessment at the Speed of DevOps - Blake Hitchcock, Brian Manifold, Roger Seagle(OWASP AppSec USA2016 DC)](https://www.youtube.com/watch?v=hEHCB7iWUzk&index=24&list=PLpr-xdpM8wG8DPozMmcbwBjFn15RtC75N)
@@ -663,7 +639,7 @@
 				* [Zero to Hero: Continuous Security with Reapsaw - Pranav Patel(2019)](https://medium.com/dowjones/zero-to-hero-continuous-security-with-reapsaw-656bab07566c)
 			* [OWASP Benchmark](https://github.com/OWASP/Benchmark)
 				* The OWASP Benchmark Project is a Java test suite designed to verify the speed and accuracy of vulnerability detection tools. It is a fully runnable open source web application that can be analyzed by any type of Application Security Testing (AST) tool, including SAST, DAST (like OWASP ZAP), and IAST tools. The intent is that all the vulnerabilities deliberately included in and scored by the Benchmark are actually exploitable so its a fair test for any kind of application vulnerability detection tool. The Benchmark also includes scorecard generators for numerous open source and commercial AST tools, and the set of supported tools is growing all the time.
-* **(DIY) Building an AppSec Pipeline**<a name="cddiy"></a>
+* **(DIY) Building an AppSec Pipeline** <a name="cddiy"></a>
 	* **Articles/Blogposts/Writeups**
 	* **Talks/Presentations/Videos**
 		* [Building a Secure DevOps Pipeline - Matt Tesauro, Aaron Weaver(OWASP AppSecUSA 2017)](https://www.youtube.com/watch?v=IAzPKzwY-ks)
@@ -709,7 +685,7 @@
 				* RepoSsessed is a project designed to parse public source code repositories and find various types of vulnerabilities. The current focus is on finding secrets, but see the Next Steps section to see what is being added.
 			* [truffleHog](https://github.com/dxa4481/truffleHog)
 				* Searches through git repositories for high entropy strings and secrets, digging deep into commit history
-* **Static Analysis Approaches & Tooling**<a name="static"></a>
+* **Static Analysis Approaches & Tooling** <a name="static"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Static Analysis at Scale: An Instagram Story - Benjamin Woodruff(2019)](https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c)
 		* [Scaling Static Analyses at Facebook - ino Distefano, Manuel Fähndrich, Francesco Logozzo, Peter W. O'Hearn(2019)](https://cacm.acm.org/magazines/2019/8/238344-scaling-static-analyses-at-facebook/fulltext)
@@ -749,7 +725,7 @@
 		* **Tool Coordination/Orchestration**
 			* [Salus](https://github.com/coinbase/salus)
 				* Salus (Security Automation as a Lightweight Universal Scanner), named after the Roman goddess of protection, is a tool for coordinating the execution of security scanners. You can run Salus on a repository via the Docker daemon and it will determine which scanners are relevant, run them and provide the output. Most scanners are other mature open source projects which we include directly in the container.
-* **Dynamic Analysis - Continuous Scanning**<a name="dynscan"></a>
+* **Dynamic Analysis - Continuous Scanning** <a name="dynscan"></a>
 	* See [Fuzzing](Fuzzing.md)
 	* **Articles/Blogposts/Writeups**
 	* **Talks & Presentations**
@@ -764,7 +740,7 @@
 	* **Tooling**
 		* [fuzz-lightyear](https://github.com/Yelp/fuzz-lightyear)
 			* A pytest-inspired, DAST framework, capable of identifying vulnerabilities in a distributed, micro-service ecosystem through chaos engineering testing and stateful, Swagger fuzzing.
-* **Dependency Management**<a name="depmgmt"></a>
+* **Dependency Management** <a name="depmgmt"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Creating a Comprehensive 3rd-Party Package License Policy for OSS - Kate Downing](https://fossa.com/blog/creating-a-comprehensive-third-party-package-license-policy/)
 	* **Talks/Presentations/Videos**
@@ -783,7 +759,7 @@
 			* A tool for analyzing third party libraries and how they connect to user classes. TPLA constructs a graph database of all dependencies, user classes, and relationships between all classes. It also allows some built in queries to be executed with reports generated based on the results.
 		* [bundler-audit](https://github.com/rubysec/bundler-audit)
 			* Patch-level verification for bundler.
-* **Metrics**<a name="metrics"></a>
+* **Metrics** <a name="metrics"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Magic Numbers: An In-Depth Guide to the 5 Key Performance Indicators for Web Application Security](https://owasp.org/www-pdf-archive/Magic_Numbers_-_5_KPIs_for_Measuring_WebAppSec_Program_Success_v3.2.pdf)
 		* [Using Metrics to Manage Your Application Security Program - Jim Bird(2016)](https://www.veracode.com/sites/default/files/Resources/Whitepapers/using-metrics-to-manage-your-application-security-program-sans-veracode.pdf)
@@ -800,7 +776,7 @@
 			* Executives often ask the wrong questions about application security. This session will discuss techniques for changing the conversation in order to encourage execs to ask the right questions—and provide data-driven answers that show progress towards meaningful objectives. 
 		* [Starting a metrics program - Marcus Ranum(OWASP AppSec California 2016)](https://www.youtube.com/watch?v=yW7kSVwucSk)
 			* Security practitioners constantly bemoan their difficulty in communicating effectively with business units or senior management. The key, of course, is using the right language - namely, metrics. In this presentation we'll outline a bunch of useful things you should know about setting up your own metrics process.
-* **Automated Response**<a name="auto"></a>
+* **Automated Response** <a name="auto"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Put Your Robots to Work: Security Automation at Twitter - Justin Collins, Neil Matatall, Alex Smolen(OWASP AppSecUSA 2012)](https://www.youtube.com/watch?v=Ivc5Sj0nj2c&app=desktop)
 			* With daily code releases and a growing infrastructure, manually reviewing code changes and protecting against security regressions quickly becomes impractical. Even when using security tools, whether commercial or open source, the difficult work of integrating them into the development and security cycles remains. We need to use an automated approach to push these tools as close to when the code is written as possible, allowing us to prevent potential vulnerabilities before they are shipped. We worked with development, operations, and release teams to create a targeted suite of tools focused on specific security concerns that are effective and don't introduce any noise. This presentation will give an overview of what we've done over the past year, what we have learned along the way, and will provide advice for anyone else going down this road.
@@ -810,9 +786,9 @@
 			* [Blogpost](https://engineering.salesforce.com/announcing-providence-rapid-vulnerability-prevention-3505ffd17e17)
 
 
+## Languages <a name="languages"></a>
 
-----------------
-### APIs<a name="apis"></a>
+### APIs <a name="apis"></a>
 * **101**
 	* [API Security Checklist](https://github.com/shieldfy/API-Security-Checklist/)
 		* Checklist of the most important security countermeasures when designing, testing, and releasing your API
@@ -827,7 +803,7 @@
 		* Syntribos is an open source automated API security testing tool that is maintained by members of the [OpenStack Security Project](https://wiki.openstack.org/wiki/Security). Given a simple configuration file and an example HTTP request, syntribos can replace any API URL, URL parameter, HTTP header and request body field with a given set of strings. Syntribos iterates through each position in the request automatically. Syntribos aims to automatically detect common security defects such as SQL injection, LDAP injection, buffer overflow, etc. In addition, syntribos can be used to help identify new security defects by automated fuzzing.
 
 ---------
-### Assembly x86/x64/ARM<a name="asm"></a>
+### Assembly x86/x64/ARM <a name="asm"></a>
 * **101**
 	* [x86 Assembly - Wikipedia](https://en.wikipedia.org/wiki/X86)
 	* [x86-64 Assembly - Wikipedia](https://en.wikipedia.org/wiki/X86-64)
@@ -869,7 +845,7 @@
 
 
 ----------
-### Android (Kotlin/Android Java)<a name="android"></a>
+### Android (Kotlin/Android Java) <a name="android"></a>
 * [Kotlin - Wikipedia](https://en.wikipedia.org/wiki/Kotlin_(programming_language))
 * [Java - Wikipedia](https://en.wikipedia.org/wiki/Java_(programming_language))
 * **Learn**
@@ -884,7 +860,7 @@
 
 
 ----------
-### Bash<a name="bash"></a>
+### Bash <a name="bash"></a>
 * [Bash - GNU](https://www.gnu.org/software/bash/)
 * [Bash (Unix shell) - Wikipedia](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 *  **Learn**
@@ -901,7 +877,7 @@
 
 
 ----------
-### C/C++<a name="c"></a>
+### C/C++ <a name="c"></a>
 * **101**
 	* [C (programming language) - Wikipedia](https://en.wikipedia.org/wiki/C_(programming_language))
 	* [C++ - Wikipedia](https://en.wikipedia.org/wiki/C%2B%2B)
@@ -947,7 +923,7 @@
 
 
 ----------
-### C#<a name="c#"></a>
+### C# <a name="c#"></a>
 * **101**
 * **Learn**
 	* **Articles/Blogposts/Writeups**
@@ -970,7 +946,7 @@
 
 
 ----------
-### Go<a name="go"></a>
+### Go <a name="go"></a>
 * **101**
 	* [Go Programming Language](https://golang.org/)
 * **Learn**
@@ -1005,7 +981,7 @@
 
 
 ----------
-### Java<a name="java"></a>
+### Java <a name="java"></a>
 * **101**
 	* [Java - Wikipedia](https://en.wikipedia.org/wiki/Java_(programming_language))
 * **Learn**
@@ -1024,7 +1000,7 @@
 
 
 ---------------
-### Javascript<a name="javascript"></a>
+### Javascript <a name="javascript"></a>
 * **101**
 * **Vanilla JS**
 * **Node.js**
@@ -1051,7 +1027,7 @@
 
 
 ----------
-### Lisp<a name="lisp"></a>
+### Lisp <a name="lisp"></a>
 * **101**
 	* [Lisp - Wikipedia](https://en.wikipedia.org/wiki/Lisp_(programming_language))
 	* [Common Lisp](https://common-lisp.net/)
@@ -1065,7 +1041,7 @@
 
 
 ----------
-### Lua<a name="lua"></a>
+### Lua <a name="lua"></a>
 * [Lua](https://www.lua.org/)
 	* Official Homepage
 * [Lua - Getting Started](https://www.lua.org/start.html)
@@ -1079,7 +1055,7 @@
 
 
 -----------
-### Perl<a name="perl"></a>
+### Perl <a name="perl"></a>
 * [Perl Programming Language](https://www.perl.org/)
 * [Perl - Wikipedia](https://en.wikipedia.org/wiki/Perl)
 * **Learn**
@@ -1093,7 +1069,7 @@
 
 
 ----------
-### Powershell<a name="power"></a>
+### Powershell <a name="power"></a>
 * **101**
 	* [PowerShell Basics - Carlos Perez](https://www.darkoperator.com/powershellbasics/)
 * **Learn**
@@ -1131,7 +1107,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----------
-### PHP<a name="php"></a>
+### PHP <a name="php"></a>
 * **101**
 	* [PHP The Right Way](http://www.phptherightway.com/)
 * **Articles/Blogposts/Writeups**
@@ -1157,7 +1133,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----------
-### Python<a name="python"></a>
+### Python <a name="python"></a>
 * **101**
 	* [Learn Python the Hard Way](http://learnpythonthehardway.org/book/)
 	* [Python For Beginners]()
@@ -1225,7 +1201,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-### Ruby<a name="ruby"></a>
+### Ruby <a name="ruby"></a>
 * **101**
 	* [Ruby Homepage](https://www.ruby-lang.org/en/)
 	* [Official Ruby Docs](https://ruby-doc.org/)
@@ -1257,7 +1233,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----------
-### Rust<a name="rust"></a>
+### Rust <a name="rust"></a>
 * **101**
 * **Learn**
 	* **Articles/Blogposts/Writeups**
@@ -1272,7 +1248,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----------
-### SQL<a name="sql"></a>
+### SQL <a name="sql"></a>
 * [SafeSQL](https://github.com/stripe/safesql)
 	* SafeSQL is a static analysis tool for Go that protects against SQL injections.
 * [The Hitchhiker's Guide to SQL Injection prevention](https://phpdelusions.net/sql_injection)
@@ -1281,12 +1257,12 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ---------------
-### Swift<a name="swift"></a>
+### Swift <a name="swift"></a>
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 	* Alamofire is an HTTP networking library written in Swift.
 
 ----------
-### UEFI Programming<a name="uefi"></a>
+### UEFI Programming <a name="uefi"></a>
 * [Unified Extensible Firmware Interface Forum](http://www.uefi.org/)
 * [Unified Extensible Firmware Interface](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface)
 * **Learn**
