@@ -37,7 +37,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------
 ### <a name="active-directory"></a>Active Directory
-* **Looking for Azure? Check the Cloud page**
+* **Looking for Azure? Check the [Cloud](Cloud.md) page**
 * **101**
 	* [What is Active Directory Domain Services and how does it work?](https://serverfault.com/questions/402580/what-is-active-directory-domain-services-and-how-does-it-work#)
 	* [The Most Common Active Directory Security Issues and What You Can Do to Fix Them - Sean Metcalf](https://adsecurity.org/?p=1684)
@@ -343,11 +343,11 @@
 			* PowerShell MachineAccountQuota and DNS exploit tools
 			* [Blogpost](https://blog.netspi.com/exploiting-adidns/)
 	* **MS SQL Server**<a name="mssql"></a>
-			* [Hacking SQL Server on Scale with PowerShell - Secure360 2017](https://www.slideshare.net/nullbind/2017-secure360-hacking-sql-server-on-scale-with-powershell)
-			* [Using SQL Server for attacking a Forest Trust](http://www.labofapenetrationtester.com/2017/03/using-sql-server-for-attacking-forest-trust.html)
-			* [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL/wiki)
-				* [2018 Blackhat USA Arsenal Presentation](https://www.youtube.com/watch?reload=9&v=UX_tBJQtqW0&feature=youtu.be)
-			* [SQL Server – Link… Link… Link… and Shell: How to Hack Database Links in SQL Server! - Annti Rantasaari(2013)](https://blog.netspi.com/how-to-hack-database-links-in-sql-server/)
+		* [Hacking SQL Server on Scale with PowerShell - Secure360 2017](https://www.slideshare.net/nullbind/2017-secure360-hacking-sql-server-on-scale-with-powershell)
+		* [Using SQL Server for attacking a Forest Trust](http://www.labofapenetrationtester.com/2017/03/using-sql-server-for-attacking-forest-trust.html)
+		* [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL/wiki)
+			* [2018 Blackhat USA Arsenal Presentation](https://www.youtube.com/watch?reload=9&v=UX_tBJQtqW0&feature=youtu.be)
+		* [SQL Server – Link… Link… Link… and Shell: How to Hack Database Links in SQL Server! - Annti Rantasaari(2013)](https://blog.netspi.com/how-to-hack-database-links-in-sql-server/)
 	* **NTLM Reflection**
 		* **101**
 			* [Windows: DCOM DCE/RPC Local NTLM Reflection Elevation of Privilege](https://bugs.chromium.org/p/project-zero/issues/detail?id=325&redir=1)
