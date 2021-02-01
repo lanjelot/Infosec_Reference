@@ -356,14 +356,14 @@
 			* [SQL Injection Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 			* [What ORMs have taught me: just learn SQL - wozniak.ca(2014)](https://wozniak.ca/blog/2014/08/03/What-ORMs-have-taught-me-just-learn-SQL/)
 * [Six Stages of debugging](http://plasmasturm.org/log/6debug/)
-		```
-		1. That can’t happen.
-		2. That doesn’t happen on my machine.
-		3. That shouldn’t happen.
-		4. Why does that happen?
-		5. Oh, I see.
-		6. How did that ever work?
-		```
+	```
+	1. That can’t happen.
+	2. That doesn’t happen on my machine.
+	3. That shouldn’t happen.
+	4. Why does that happen?
+	5. Oh, I see.
+	6. How did that ever work?
+	```
 
 
 
