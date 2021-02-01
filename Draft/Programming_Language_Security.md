@@ -33,7 +33,7 @@
     - [Dependency Management](#depmgmt)
     - [Metrics](#metrics)
     - [Automated Response](#auto)
-- [Languages](#languages)
+- [Programming](#programming)
   - [APIs](#apis)
   - [Assembly x86/x64/ARM](#asm)
   - [Android (Kotlin/Android Java)](#android)
@@ -86,7 +86,7 @@
 	* [A bug goes skateboarding on Boehm’s Curve - Ulf Eriksson(2013)](https://reqtest.com/general/a-bug-goes-skateboarding-on-boehms-curve/)
 
 
-## Secure Development Patterns/Practices/Resources <a name="securedev"></a> 
+## Secure Development Patterns/Practices/Resources <a name="securedev"></a>
 * **General**
 	* **Articles/Papers/Talks/Writeups**
 		* [Counterfeit Object-oriented Programming](http://syssec.rub.de/media/emma/veroeffentlichungen/2015/03/28/COOP-Oakland15.pdf)
@@ -172,7 +172,7 @@
 	* **Published Audits**
 		* [Trail of Bits Publically Published Code Audits/Security Reviews](https://github.com/trailofbits/publications/tree/master/reviews)
 	* **Talks/Presentations/Videos**
-		* [Code Reviews: Honesty, Kindness, Inspiration: Pick Three - Jacob Stoebel RubyConf 2017](http://confreaks.tv/videos/rubyconf2017-code-reviews-honesty-kindness-inspiration-pick-three) 
+		* [Code Reviews: Honesty, Kindness, Inspiration: Pick Three - Jacob Stoebel RubyConf 2017](http://confreaks.tv/videos/rubyconf2017-code-reviews-honesty-kindness-inspiration-pick-three)
 			* The attitude among many developers seems to be that code reviews can be either honest or nice but not both. I see this as a false dichotomy; while code reviews should be both honest and kind, they should be focused on inspiring creators to go back to their work, excited to make it better. This talk will introduce the Liz Lerman Critical Response process, a framework for giving feedback on anything creative. You'll leave this talk with tips on how to improve your code reviews by putting the creator in the driver's seat and inspiring everyone on the team to make the product even better.
 		* [Goldilocks and the Three Code Reviews - Vaidehi Joshi RedDot Ruby Conf 2017](https://confreaks.tv/videos/reddotrubyconf2017-goldilocks-and-the-three-code-reviews)
 			* Once upon a time, Goldilocks had a couple extra minutes to spare before morning standup. She logged into Github and saw that there were three pull requests waiting for her to review. We’ve probably all heard that peer code reviews can do wonders to a codebase. But not all type of code reviews are effective. Some of them seem to go on and on forever, while others pick at syntax and formatting but miss bugs. This talk explores what makes a strong code review and what makes a painful one. Join Goldilocks as she seeks to find a code review process that’s neither too long nor too short, but just right!
@@ -377,7 +377,7 @@
 			* [Semgrep](https://github.com/returntocorp/semgrep)
 				* semgrep is a tool for easily detecting and preventing bugs and anti-patterns in your codebase. It combines the convenience of grep with the correctness of syntactical and semantic search. Developers, DevOps engineers, and security engineers use semgrep to write code with confidence.
 			* [PMD](http://pmd.sourceforge.net/)
-				* PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. It supports Java, JavaScript, PLSQL, Apache Velocity, XML, XSL. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in Java, C, C++, C#, PHP, Ruby, Fortran, JavaScript, PLSQL, Apache Velocity, Ruby, Scala, Objective C, Matlab, Python, Go. 
+				* PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. It supports Java, JavaScript, PLSQL, Apache Velocity, XML, XSL. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in Java, C, C++, C#, PHP, Ruby, Fortran, JavaScript, PLSQL, Apache Velocity, Ruby, Scala, Objective C, Matlab, Python, Go.
 			* [SourceTrail](https://www.sourcetrail.com/)
 				* A cross-platform source explorer for C/C++ and Java
 			* [Infer](https://github.com/facebook/infer)
@@ -483,7 +483,7 @@
 		* **Tooling**
 			* [RIPS](http://rips-scanner.sourceforge.net/)
 				* RIPS is a tool written in PHP to find vulnerabilities in PHP applications using static code analysis. By tokenizing and parsing all source code files RIPS is able to transform PHP source code into a program model and to detect sensitive sinks (potentially vulnerable functions) that can be tainted by user input (influenced by a malicious user) during the program flow. Besides the structured output of found vulnerabilities RIPS also offers an integrated code audit framework for further manual analysis.
-			* [PHPMD - PHP Mess Detector](http://phpmd.org/about.html)  
+			* [PHPMD - PHP Mess Detector](http://phpmd.org/about.html)
 				* What PHPMD does is: It takes a given PHP source code base and look for several potential problems within that source. These problems can be things like: Possible bugs; Suboptimal code; Overcomplicated expressions; Unused parameters, methods, properties.
 			* [Phan](https://github.com/phan/phan)
 				* Phan is a static analyzer for PHP. Phan prefers to avoid false-positives and attempts to prove incorrectness rather than correctness.
@@ -523,7 +523,7 @@
 			* [RuboCop](https://github.com/rubocop-hq/rubocop)
 				* RuboCop is a Ruby static code analyzer and code formatter. Out of the box it will enforce many of the guidelines outlined in the community Ruby Style Guide.
 			* [brakeman](https://github.com/presidentbeef/brakeman)
-				* A static analysis security vulnerability scanner for Ruby on Rails applications 
+				* A static analysis security vulnerability scanner for Ruby on Rails applications
 			* [RubyCritic](https://github.com/whitesmith/rubycritic)
 				* RubyCritic is a gem that wraps around static analysis gems such as Reek, Flay and Flog to provide a quality report of your Ruby code.
 			* [Flog](https://github.com/seattlerb/flog)
@@ -719,7 +719,7 @@
 			* [ANTLR](https://github.com/antlr/antlr4)
 				* ANTLR (ANother Tool for Language Recognition) is a powerful parser generator for reading, processing, executing, or translating structured text or binary files. It's widely used to build languages, tools, and frameworks. From a grammar, ANTLR generates a parser that can build parse trees and also generates a listener interface (or visitor) that makes it easy to respond to the recognition of phrases of interest.
 			* [bblfshd](https://github.com/bblfsh/bblfshd)
-				* A self-hosted server for source code parsing 
+				* A self-hosted server for source code parsing
 			* [PhASAR](https://phasar.org/phasar/)
 				* PhASAR is a LLVM-based static analysis framework written in C++. The framework allows for solving arbitrary (decidable) data-flow problems on the LLVM intermediate representation (IR).
 		* **Tool Coordination/Orchestration**
@@ -773,7 +773,7 @@
 			* [Slides](https://www.slideshare.net/Cigital/software-security-metrics)
 			* More often than not, company executives ask the wrong questions about software security.  This session will discuss techniques for changing the conversation about software security in order to encourage executives to ask the right questions – and provide answers that show progress towards meaningful objectives.  Caroline will discuss a progression of software security capabilities and the metrics that correspond to different levels of maturity.  She’ll discuss an approach for developing key metrics for your unique software security program and walk through a detailed example.
 		* [Effective AppSec Metrics - Caroline Wong(OWASP SF 2017)](https://www.youtube.com/watch?v=dY8IuQ8rUd4)
-			* Executives often ask the wrong questions about application security. This session will discuss techniques for changing the conversation in order to encourage execs to ask the right questions—and provide data-driven answers that show progress towards meaningful objectives. 
+			* Executives often ask the wrong questions about application security. This session will discuss techniques for changing the conversation in order to encourage execs to ask the right questions—and provide data-driven answers that show progress towards meaningful objectives.
 		* [Starting a metrics program - Marcus Ranum(OWASP AppSec California 2016)](https://www.youtube.com/watch?v=yW7kSVwucSk)
 			* Security practitioners constantly bemoan their difficulty in communicating effectively with business units or senior management. The key, of course, is using the right language - namely, metrics. In this presentation we'll outline a bunch of useful things you should know about setting up your own metrics process.
 * **Automated Response** <a name="auto"></a>
@@ -786,7 +786,7 @@
 			* [Blogpost](https://engineering.salesforce.com/announcing-providence-rapid-vulnerability-prevention-3505ffd17e17)
 
 
-## Languages <a name="languages"></a>
+## Programming <a name="programming"></a>
 
 ### APIs <a name="apis"></a>
 * **101**
@@ -829,7 +829,7 @@
 		* Introduction for those who don’t know ASM and a reference for those that do.
 	* [x86 Disassembly/Calling Conventions](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions)
 	* [x86 Disassembly/Calling Convention Examples](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Convention_Examples)
-	* [sandpile.org](http://www.sandpile.org/) 
+	* [sandpile.org](http://www.sandpile.org/)
 		* The world's leading source for technical x86 processor information.
 		* Good source of reference docs/images for x86 ASM
 	* [Walkthrough: Creating and Using a Dynamic Link Library (C++)](https://msdn.microsoft.com/en-us/library/ms235636.aspx)
@@ -855,7 +855,7 @@
 	* [java-aes-crypto (Android class)](https://github.com/tozny/java-aes-crypto)
 		* A simple Android class for encrypting & decrypting strings, aiming to avoid the classic mistakes that most such classes suffer from.
 	* [smalisca](https://github.com/dorneanu/smalisca)
-		* Static Code Analysis for Smali files 
+		* Static Code Analysis for Smali files
 
 
 
@@ -884,10 +884,10 @@
 	* [C++ Homepage](https://isocpp.org/)
 * **Learn**
 	* [Stanford C 101](http://cslibrary.stanford.edu/101/EssentialC.pdf)
-		* Stanford CS Education Library: A 45 page summary of the C language. Explains all the common features and techniques for the C language. The coverage is pretty quick, so it is most appropriate for someone with some programming background who needs to see how C works. Topics include variables, int types, floating point types, promotion, truncation, operators, control structures (if, while, for), functions, value parameters, reference parameters, structs, pointers, arrays, the pre-processor, and the standard C library functions. (revised 4/2003) 
+		* Stanford CS Education Library: A 45 page summary of the C language. Explains all the common features and techniques for the C language. The coverage is pretty quick, so it is most appropriate for someone with some programming background who needs to see how C works. Topics include variables, int types, floating point types, promotion, truncation, operators, control structures (if, while, for), functions, value parameters, reference parameters, structs, pointers, arrays, the pre-processor, and the standard C library functions. (revised 4/2003)
 		* [Homepage](http://cslibrary.stanford.edu/101/)
 	* [Stanford C Pointers and Memory](http://cslibrary.stanford.edu/102/PointersAndMemory.pdf)
-		* Stanford CS Education Library: a 31 page introduction to programming with pointers and memory in C, C++ and other languages. Explains how pointers and memory work and how to use them -- from the basic concepts through all the major programming techniques. Can be used as an introduction to pointers for someone with basic programming experience or as a quick review. Many advanced programming and debugging problems only make sense with a solid understanding of pointers and memory -- this document tries to provide that understanding. 
+		* Stanford CS Education Library: a 31 page introduction to programming with pointers and memory in C, C++ and other languages. Explains how pointers and memory work and how to use them -- from the basic concepts through all the major programming techniques. Can be used as an introduction to pointers for someone with basic programming experience or as a quick review. Many advanced programming and debugging problems only make sense with a solid understanding of pointers and memory -- this document tries to provide that understanding.
 	* [Homepage](http://cslibrary.stanford.edu/102/)
 	* [How to C in 2016](https://matt.sh/howto-c)
 	* [A critique of "How to C in 2016" by Matt](https://github.com/Keith-S-Thompson/how-to-c-response)
@@ -971,7 +971,7 @@
 	* [gorilla/securecookie](https://github.com/gorilla/securecookie)
 		* securecookie encodes and decodes authenticated and optionally encrypted cookie values.
 	* [gorilla/csrf](https://github.com/gorilla/csrf)
-		* gorilla/csrf is a HTTP middleware library that provides cross-site request forgery (CSRF) protection. 
+		* gorilla/csrf is a HTTP middleware library that provides cross-site request forgery (CSRF) protection.
 	* [nosurf](https://github.com/justinas/nosurf)
 		* nosurf is an HTTP package for Go that helps you prevent Cross-Site Request Forgery attacks. It acts like a middleware and therefore is compatible with basically any Go HTTP application.
 	* [CFSSL](https://github.com/cloudflare/cfssl)
@@ -994,7 +994,7 @@
 	* [Serianalyzer](https://github.com/mbechler/serianalyzer)
 		* A static byte code analyzer for Java deserialization gadget research
 	* [List of 3rd Party Security Libraries for Java - OWASP](https://www.owasp.org/index.php/Category:Java#tab=Related_3rd_Party_Projects)
-		* A list of third party (i.e. not part of Java SE or EE) security frameworks. This page contains a list of Java security libraries and frameworks and indicates which security features each library supports. 
+		* A list of third party (i.e. not part of Java SE or EE) security frameworks. This page contains a list of Java security libraries and frameworks and indicates which security features each library supports.
 
 
 
@@ -1007,10 +1007,10 @@
 	* **Articles/Blogposts/Writeups**
 		* [We’re under attack! 23+ Node.js security best practices - Yoni Goldberg, Kyle Martin and Bruno Scheufler](https://medium.com/@nodepractices/were-under-attack-23-node-js-security-best-practices-e33c146cb87d)
 		* [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
-			* The largest Node.JS best practices list. Curated from the top ranked articles and always updated 
+			* The largest Node.JS best practices list. Curated from the top ranked articles and always updated
 * **Learn**
 	* [Mostly Adequate Guide](https://drboolean.gitbooks.io/mostly-adequate-guide/)
-		* This is a book on the functional paradigm in general. We'll use the world's most popular functional programming language: JavaScript. Some may feel this is a poor choice as it's against the grain of the current culture which, at the moment, feels predominately imperative. 
+		* This is a book on the functional paradigm in general. We'll use the world's most popular functional programming language: JavaScript. Some may feel this is a poor choice as it's against the grain of the current culture which, at the moment, feels predominately imperative.
 	* [Spellbook of Modern Web Dev](https://github.com/dexteryy/spellbook-of-modern-webdev)
 		* A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development
 * **Reference**
@@ -1189,7 +1189,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 	* [Scapy3k](https://github.com/phaethon/scapy)
 		* This is a fork of scapy (http://www.secdev.org) to make it compatible with python3. Fork based on scapy v2.3.1 All tests from regression (758 tests), ipsec, and both other test suites pass. Also, I tested full tutorial series [Building Network Tools with Scapy by @thepacketgeek](http://thepacketgeek.com/series/building-network-tools-with-scapy/) using scapy-python3. Please, submit all issues https://github.com/phaethon/scapy preferrably with .pcap files for tests. Bugs for individual layers are usually easy to fix.
 	* [python-digitalocean](https://github.com/koalalorenzo/python-digitalocean)
-		* Python module to manage Digital Ocean droplets 
+		* Python module to manage Digital Ocean droplets
 	* [docopt](https://github.com/docopt/docopt)
 		* Pythonic command line arguments parser, that will make you smile https://github.com/docopt/docopt
 * **Analysis & Debugging**
@@ -1225,7 +1225,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 		* A community-driven Ruby coding style guide
 * **Useful Libraries/programs/Frameworks**
 	* [Shellpaste](https://github.com/andrew-morris/shellpaste)
-		* Tiny snippet of code that pulls ASCII shellcode from pastebin and executes it. The purpose of this is to have a minimal amount of benign code so AV doesn't freak out, then it pulls down the evil stuff. People have been doing this kind of stuff for years so I take no credit for the concept. That being said, this code (or similar code) works surprisingly often during pentests when conventional malware fails. 
+		* Tiny snippet of code that pulls ASCII shellcode from pastebin and executes it. The purpose of this is to have a minimal amount of benign code so AV doesn't freak out, then it pulls down the evil stuff. People have been doing this kind of stuff for years so I take no credit for the concept. That being said, this code (or similar code) works surprisingly often during pentests when conventional malware fails.
 * **Tools**
 	* [rb2exe](https://github.com/loureirorg/rb2exe)
 		* Ruby to EXE - Turn ruby scripts into portable executable apps
@@ -1278,7 +1278,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----
-### Other 
+### Other
 * [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 * [Mostly Adequate Guide](https://drboolean.gitbooks.io/mostly-adequate-guide/)
 	* This is a book on the functional paradigm in general. We'll use the world's most popular functional programming language: JavaScript. Some may feel this is a poor choice as it's against the grain of the current culture which, at the moment, feels predominately imperative.
