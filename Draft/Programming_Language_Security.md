@@ -4,7 +4,7 @@
 - [General](#general)
 - [Secure Development Patterns/Practices/Resources](#securedev)
 	- [Application Logging & Monitoring](#logmon)
-	- ['Appsec' stuff](#appsec) 
+	- [Appsec Stuff](#appsec) 
 	- [Code Repo](#crepo)
 	- [Code Review](#code-review)
 	- [Secrets Management](#secrets)
@@ -13,9 +13,13 @@
 	- [Supply Chain Management](#supply)
 	- [Threat Modeling](#threatm)
 	- [Avoiding Specific Vulnerability Classes](#specvuln)
+		- [Comparison Operations](#compops)
+		- [Cryptographic Issues](#crypto)
+		- [Input Validation](#inputval)
+		- [Race Conditions/ToCToU Bugs](#toctou)
 		- [Account Enumeration](#ace)
-		- [Secure file upload](#sfu)
-		- [SQLi](#sqli)
+		- [Secure File Upload](#sfu)
+		- [SQL Injection](#sqli)
 - [Code Repositories](#code-repo)
 - [Source Code Analysis](#sca)
 	- [Language Agnostic](#nonspec)
@@ -57,7 +61,7 @@
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-### <a name="general">General</a>
+### General<a name="general"></a>
 * The content here is just stuff I've come across or think would be useful to someone in infosec. It is not to be taken as anything beyond a suggestion about stuff.
 * **Articles/Blogposts/Writeups**
 	* [How To Write Unmaintainable Code - Roedy Green](https://github.com/Droogans/unmaintainable-code)
@@ -91,7 +95,7 @@
 
 
 -----------
-### <a name="securedev"></a> Secure Development Patterns/Practices/Resources
+### Secure Development Patterns/Practices/Resources<a name="securedev"></a> 
 * **General**
 	* **Articles/Papers/Talks/Writeups**
 		* [Counterfeit Object-oriented Programming](http://syssec.rub.de/media/emma/veroeffentlichungen/2015/03/28/COOP-Oakland15.pdf)
@@ -101,11 +105,8 @@
 		* [Who Fixes That Bug? - Part One: Them! - Ryan McGeehan](https://medium.com/starting-up-security/who-fixes-that-bug-d44f9a7939f2)
 			* [Part 2](https://medium.com/starting-up-security/who-fixes-that-bug-f17d48443e21)
 	* **Talks/Presentations/Videos**
-* **Account Enumeration**<a name="ace"></a>
-	* [Once upon a time an account enumeration - Cust0n](https://sidechannel.tempestsi.com/once-upon-a-time-there-was-an-account-enumeration-4cf8ca7cd6c1)
-		* "The aim of this blogpost is to illustrate how account enumeration can occur in web applications, from the classic example to some tricks we’ve learned over the years (and of course show how to avoid this)."
 * **Application Logging & Monitoring**<a name="logmon"></a>
-* **'AppSec' Stuff**<a name="appsec"></a>
+* **AppSec Stuff**<a name="appsec"></a>
 	* **Articles/Blogposts/Writeups**
 		* [Application Security in a DevOps Environment - Lyft](https://eng.lyft.com/application-security-in-a-devops-environment-53092f8a6048)
 		* [Designing Security for Billions - Facebook](https://newsroom.fb.com/news/2019/01/designing-security-for-billions/)
@@ -329,42 +330,46 @@
 		* [Mozilla Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment)
 			* A typical Rapid Risk Analysis/Assessment (RRA) takes about 30 minutes. It is not a security review, a full threat-model, a vulnerability assessment, or an audit. These types of activities may however follow an RRA if deemed appropriate or necessary. The main objective of the RRA is to understand the value and impact of a service to the reputation, finances, productivity of the project or business. It is based on the data processed, stored or simply accessible by services. Note that the RRA does not focus on enumerating and analyzing security controls. The RRA process is intended for analyzing and assessing services, not processes or individual controls.
 * **Specific Vulnerabilitiy Mitigation/Prevention**<a name="specvuln"></a>
-	* **Comparison Operations**
+	* **Comparison Operations**<a name="compops"></a>
 		* **Articles/Blogposts/Writeups**
 			* [The Evil within the Comparison Functions - Andrey Karpov](https://www.viva64.com/en/b/0509/)
 			* [Inverting Your Assumptions: A Guide To JIT Comparisons - Jasiel Spelman(2018)](https://www.zerodayinitiative.com/blog/2018/4/12/inverting-your-assumptions-a-guide-to-jit-comparisons)
-	* **Cryptogrpaphic Issues**
+	* **Cryptographic Issues**<a name="crypto"></a>
 		* **Articles/Blogposts/Writeups**
-			* [Top 10 Developer Crypto Mistakes - crazycontini(2017)](https://littlemaninmyhead.wordpress.com/2017/04/22/top-10-developer-crypto-mistakes/)
-	* **Input Validation**
+			* [Top 10 Developer Crypto Mistakes - crazycontini(2017)](https://littlemaninmyhead.wordpress.com/2017/04/22/top-10-developer-crypto-mistakes)
+	* **Input Validation**<a name="inputval"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Validating input - David Wheeler(2003)](https://www.ibm.com/developerworks/library/l-sp2/index.html)
-	* **Race Conditions/ToCToU Bugs**
+	* **Race Conditions/ToCToU Bugs**<a name="toctou"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Exploiting and Protecting Against Race Conditions - Jack Cable(2017)](https://lightningsecurity.io/blog/race-conditions/)
+	* **Account Enumeration**<a name="ace"></a>
+		* **Articles/Blogposts/Writeups**
+			* [Once upon a time an account enumeration - Cust0n](https://sidechannel.tempestsi.com/once-upon-a-time-there-was-an-account-enumeration-4cf8ca7cdc1)
+			* "The aim of this blogpost is to illustrate how account enumeration can occur in web applications, from the classic example to some tricks we’ve learned over the years (and of course show how to avoid this)."
 	* **Secure File Upload**<a name="sfu"></a>
 		* **Articles/Blogposts/Writeups**
 			* [8 Basic Rules to Implement Secure File Uploads - SANS](https://software-security.sans.org/blog/2009/12/28/8-basic-rules-to-implement-secure-file-uploads/)
-	* **SQLi**
+	* **SQL Injection**<a name="sqli"></a>
 		* **Articles/Blogposts/Writeups**
 			* [Bobby Tables: A guide to preventing SQL injection](https://bobby-tables.com/)
 			* [SQL Injection Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 			* [What ORMs have taught me: just learn SQL - wozniak.ca(2014)](https://wozniak.ca/blog/2014/08/03/What-ORMs-have-taught-me-just-learn-SQL/)
 * [Six Stages of debugging](http://plasmasturm.org/log/6debug/)
-	```
-		* 1. That can’t happen.
-		* 2. That doesn’t happen on my machine.
-		* 3. That shouldn’t happen.
-		* 4. Why does that happen?
-		* 5. Oh, I see.
-		* 6. How did that ever work?
-	```
+		```
+		1. That can’t happen.
+		2. That doesn’t happen on my machine.
+		3. That shouldn’t happen.
+		4. Why does that happen?
+		5. Oh, I see.
+		6. How did that ever work?
+		```
 
 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### <a name="sca">Source Code Analysis</a>
+### Source Code Analysis<a name="sca"></a>
 * **Articles/Blogposts/Writeups**
 	* [What I learned from doing 1000 code reviews](https://hackernoon.com/what-i-learned-from-doing-1000-code-reviews-fe28d4d11c71)
 	* [One Line of Code that Compromises Your Server - The dangers of a simplistic session secret](https://martinfowler.com/articles/session-secret.html)
@@ -412,7 +417,7 @@
 			* [ripgrep is faster than {grep, ag, git grep, ucg, pt, sift} - Andrew Gallant(2016)](https://blog.burntsushi.net/ripgrep/)
 * **Specific Languages**<a name="spec"></a>
 	* **`*`sh**
-		**Bash**
+		* **Bash**
 			* [Shellcheck](https://github.com/koalaman/shellcheck)
 				* ShellCheck is a GPLv3 tool that gives warnings and suggestions for bash/sh shell scripts
 	* **C/C++**
@@ -582,7 +587,7 @@
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Application Security Pipeline <a name="appsecpipeline"></a>
+### Application Security Pipeline<a name="appsecpipeline"></a>
 * **General**
 	* **Articles/Blogposts/Writeups**
 		* [Scale your security with DevSecOps: 4 valuable mindsets and principles - Clint Gibler](https://techbeacon.com/devops/how-scale-security-devsecops-4-valuable-mindsets-principles)
@@ -636,7 +641,6 @@
 			* As the Free and Open Source (FOSS) concept has matured, its commercial significance has also increased, and issues such as quality and sustainability have moved to the fore. In this study, the authors focus on timebased release management in large volunteerFOSS projects, and reveal howthey address quality and sustainability issues. They discuss the differences between release management in the traditional software context and contrast it with FOSS settings. Based on detailed case studies of a number of prominent FOSS projects, they describe the move to time-based release management and identify the factors and criteria necessary for a successful transition. The authors also consider the implications for software development more generally in the current dynamic Internet-enabled environment.
 	* **Tooling**
 * **CI/CD Scanning Tooling/Approaches**<a name="cdscan"></a>
-	* **Articles/Blogposts/Writeups**
 	* **Homegrown Implementing Scanner Tooling**
 		* **Talks/Presentations/Videos**
 			* [Scaling Security Assessment at the Speed of DevOps - Blake Hitchcock, Brian Manifold, Roger Seagle(OWASP AppSec USA2016 DC)](https://www.youtube.com/watch?v=hEHCB7iWUzk&index=24&list=PLpr-xdpM8wG8DPozMmcbwBjFn15RtC75N)
@@ -659,7 +663,7 @@
 				* [Zero to Hero: Continuous Security with Reapsaw - Pranav Patel(2019)](https://medium.com/dowjones/zero-to-hero-continuous-security-with-reapsaw-656bab07566c)
 			* [OWASP Benchmark](https://github.com/OWASP/Benchmark)
 				* The OWASP Benchmark Project is a Java test suite designed to verify the speed and accuracy of vulnerability detection tools. It is a fully runnable open source web application that can be analyzed by any type of Application Security Testing (AST) tool, including SAST, DAST (like OWASP ZAP), and IAST tools. The intent is that all the vulnerabilities deliberately included in and scored by the Benchmark are actually exploitable so its a fair test for any kind of application vulnerability detection tool. The Benchmark also includes scorecard generators for numerous open source and commercial AST tools, and the set of supported tools is growing all the time.
-**(DIY) Building an AppSec Pipeline**<a name="cddiy"></a>
+* **(DIY) Building an AppSec Pipeline**<a name="cddiy"></a>
 	* **Articles/Blogposts/Writeups**
 	* **Talks/Presentations/Videos**
 		* [Building a Secure DevOps Pipeline - Matt Tesauro, Aaron Weaver(OWASP AppSecUSA 2017)](https://www.youtube.com/watch?v=IAzPKzwY-ks)
@@ -746,7 +750,7 @@
 			* [Salus](https://github.com/coinbase/salus)
 				* Salus (Security Automation as a Lightweight Universal Scanner), named after the Roman goddess of protection, is a tool for coordinating the execution of security scanners. You can run Salus on a repository via the Docker daemon and it will determine which scanners are relevant, run them and provide the output. Most scanners are other mature open source projects which we include directly in the container.
 * **Dynamic Analysis - Continuous Scanning**<a name="dynscan"></a>
-	* See the Fuzzing - ./fuzzing.html page.
+	* See [Fuzzing](Fuzzing.md)
 	* **Articles/Blogposts/Writeups**
 	* **Talks & Presentations**
 		* [Differences Between Web Application Scanning Tools when Scanning for XSS and SQLi - Robert Feeney(AppSecUSA 2017)](https://www.youtube.com/watch?v=VO2uBSfXZso)
@@ -823,7 +827,7 @@
 		* Syntribos is an open source automated API security testing tool that is maintained by members of the [OpenStack Security Project](https://wiki.openstack.org/wiki/Security). Given a simple configuration file and an example HTTP request, syntribos can replace any API URL, URL parameter, HTTP header and request body field with a given set of strings. Syntribos iterates through each position in the request automatically. Syntribos aims to automatically detect common security defects such as SQL injection, LDAP injection, buffer overflow, etc. In addition, syntribos can be used to help identify new security defects by automated fuzzing.
 
 ---------
-### <a name="asm">Assembly x86/x64/ARM</a>
+### Assembly x86/x64/ARM<a name="asm"></a>
 * **101**
 	* [x86 Assembly - Wikipedia](https://en.wikipedia.org/wiki/X86)
 	* [x86-64 Assembly - Wikipedia](https://en.wikipedia.org/wiki/X86-64)
@@ -897,7 +901,7 @@
 
 
 ----------
-### <a name="c">C/C++</a>
+### C/C++<a name="c"></a>
 * **101**
 	* [C (programming language) - Wikipedia](https://en.wikipedia.org/wiki/C_(programming_language))
 	* [C++ - Wikipedia](https://en.wikipedia.org/wiki/C%2B%2B)
@@ -943,7 +947,7 @@
 
 
 ----------
-### <a name="c#"></a>C`#`
+### C#<a name="c#"></a>
 * **101**
 * **Learn**
 	* **Articles/Blogposts/Writeups**
@@ -965,12 +969,8 @@
 
 
 
-
-
-
-
 ----------
-### <a name="go">Go</a>
+### Go<a name="go"></a>
 * **101**
 	* [Go Programming Language](https://golang.org/)
 * **Learn**
@@ -1005,7 +1005,7 @@
 
 
 ----------
-### <a name="java"></a> Java
+### Java<a name="java"></a>
 * **101**
 	* [Java - Wikipedia](https://en.wikipedia.org/wiki/Java_(programming_language))
 * **Learn**
@@ -1024,7 +1024,7 @@
 
 
 ---------------
-### <a name="javascript"></a> Javascript
+### Javascript<a name="javascript"></a>
 * **101**
 * **Vanilla JS**
 * **Node.js**
@@ -1051,7 +1051,7 @@
 
 
 ----------
-### <a name="lisp"></a> Lisp
+### Lisp<a name="lisp"></a>
 * **101**
 	* [Lisp - Wikipedia](https://en.wikipedia.org/wiki/Lisp_(programming_language))
 	* [Common Lisp](https://common-lisp.net/)
@@ -1065,7 +1065,7 @@
 
 
 ----------
-### Lua
+### Lua<a name="lua"></a>
 * [Lua](https://www.lua.org/)
 	* Official Homepage
 * [Lua - Getting Started](https://www.lua.org/start.html)
@@ -1079,7 +1079,7 @@
 
 
 -----------
-### <a name="perl"Perl</a>
+### Perl<a name="perl"></a>
 * [Perl Programming Language](https://www.perl.org/)
 * [Perl - Wikipedia](https://en.wikipedia.org/wiki/Perl)
 * **Learn**
@@ -1093,7 +1093,7 @@
 
 
 ----------
-### <a name="power">Powershell</a>
+### Powershell<a name="power"></a>
 * **101**
 	* [PowerShell Basics - Carlos Perez](https://www.darkoperator.com/powershellbasics/)
 * **Learn**
@@ -1157,7 +1157,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ----------
-### <a name="python">Python</a>
+### Python<a name="python"></a>
 * **101**
 	* [Learn Python the Hard Way](http://learnpythonthehardway.org/book/)
 	* [Python For Beginners]()
@@ -1225,7 +1225,7 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-### <a name="ruby">Ruby</a>
+### Ruby<a name="ruby"></a>
 * **101**
 	* [Ruby Homepage](https://www.ruby-lang.org/en/)
 	* [Official Ruby Docs](https://ruby-doc.org/)
@@ -1256,9 +1256,8 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 
-
-------------------------------------------------------------------------------------------------------------------------------------------------------
-### <a name="rust">Rust</a>
+----------
+### Rust<a name="rust"></a>
 * **101**
 * **Learn**
 	* **Articles/Blogposts/Writeups**
@@ -1282,12 +1281,12 @@ $err = $ErrorSource + " reports: " + $ErrorMessage
 
 
 ---------------
-### Swift <a name="swift"></a>
+### Swift<a name="swift"></a>
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 	* Alamofire is an HTTP networking library written in Swift.
 
 ----------
-### UEFI Programming <a name="uefi"></a>
+### UEFI Programming<a name="uefi"></a>
 * [Unified Extensible Firmware Interface Forum](http://www.uefi.org/)
 * [Unified Extensible Firmware Interface](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface)
 * **Learn**
