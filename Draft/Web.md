@@ -3,7 +3,7 @@
 ## Table of Contents
 - [General](#general)
 - [Standards](#standards)
-       - [Content Security Policy (CSP)](#csp)
+  - [Content Security Policy (CSP)](#csp)
   - [Cross-Origin Resource Sharing (CORS)](#cors)
   - [Cookies](#cookies)
   - [Document Object Model (DOM)](#dom)
